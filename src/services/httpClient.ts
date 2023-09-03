@@ -3,7 +3,7 @@ import axios from "axios";
 const BASE_URL = "https://filmnet.ir/api-v2/";
 const httpClient = axios.create({
     baseURL: BASE_URL,
-});
+})
 
 httpClient.interceptors.response.use(
     response => {
