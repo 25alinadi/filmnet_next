@@ -1,7 +1,7 @@
 export interface IVideoItemData{
     id: string,
     title: string,
-    poster_image: string,
+    poster_image: {path: string},
     duration: string,
     categories: Array<ICategoryForVideoData>,
     imdb_rank_percent: number,

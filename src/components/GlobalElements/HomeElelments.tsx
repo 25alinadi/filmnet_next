@@ -9,13 +9,3 @@ export const HomeDiv = styled.div`
 `
 
 export const HomeSection = styled.section``
-
-export const HomeUl = styled.ul`
-  padding: 0;
-  margin: 0;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: flex-start;
-  gap: 1rem;
-`

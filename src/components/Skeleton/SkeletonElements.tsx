@@ -22,8 +22,6 @@ export const SkeletonUl = styled.ul`
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: flex-start;
-  opacity: 1;
-  transition: opacity .5s ease;
 `
 
 export const SkeletonLi = styled.li`
