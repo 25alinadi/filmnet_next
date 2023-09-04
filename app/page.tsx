@@ -8,6 +8,7 @@ import {useAppDispatch} from "@/hooks/useAppDispatch";
 import number = CSS.number;
 import Skeleton from "@/components/Skeleton/Skeleton";
 import * as HomeEl from "@/components/GlobalElements/HomeElelments";
+import {SkeletonUl} from "@/components/Skeleton/SkeletonElements";
 
 export default function Home() {
     const dispatch = useAppDispatch()
@@ -20,22 +21,19 @@ export default function Home() {
     // })
 
     useEffect(() => {
-        dispatch(fetchVideos())
+        // dispatch(fetchVideos())
     }, [])
     // const vendorItems = vendors?.map((item) => <Card key={item?.data?.id} data={item?.data}/>)
 
     return (
         <HomeEl.HomeDiv>
             <HomeEl.HomeSection>
-                <HomeEl.HomeUl>
-                    <Skeleton />
-                    <Skeleton />
-                    <Skeleton />
-                    <Skeleton />
+                {/*<HomeEl.HomeUl>*/}
                     {/*{status === "idle" ? (Array.from({length: 4}).map((_, index) => (<Skeleton key={index}/>))) : vendorItems}*/}
                     {/*{(status === "loading") && <Skeleton/>}*/}
                     {/*<div ref={observer} />*/}
-                </HomeEl.HomeUl>
+                {/*</HomeEl.HomeUl>*/}
+                <Skeleton />
             </HomeEl.HomeSection>
         </HomeEl.HomeDiv>
     )
