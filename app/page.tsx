@@ -15,7 +15,7 @@ export default function Home() {
     const dispatch = useAppDispatch()
     const {videos, offset, status} = useAppSelector(selectVideoState)
 
-    const observer = useRef<HTMLDivElement>(undefined)
+    const observer = useRef<HTMLDivElement>(null)
 
     useIsVisible(observer, () => {
         if(status === 'succeeded' || status === 'idle') dispatch(fetchVideos())

@@ -9,20 +9,32 @@ type CardProps = {
 
 const Card: FC<CardProps> = ({data}) => {
     const duration = data?.duration?.split(":")
-    const genre = data?.categories?.filter((item) => item?.type === 'genre')[0]
-    const territory = data?.categories?.filter((item) => item?.type === 'territory')[0]
+    const genre = data?.categories?.find((item) => item.type === 'genre');
+    const territory = data?.categories?.find((item) => item.type === 'territory');
 
     return (
         <Fragment>
             <CardEl.CardLi>
                 <CardEl.CardDiv>
-                    <CardEl.CardLink href={"#"} alt={data?.title}>
+                    <CardEl.CardLink href={"#"}>
                         <CardEl.CardImg src={data?.poster_image?.path} alt={data?.title}/>
                         <CardEl.CardContent>
                             <CardEl.CardContentList>
-                                {genre && <CardEl.CardContentTxt>{genre?.items?.map((item, index) => `${item?.title}${index !== (genre?.items?.length - 1) ? ", " : ''}`)}</CardEl.CardContentTxt>}
-                                {territory && <CardEl.CardContentTxt>{`${data?.year} / ${territory?.items?.map((item, index) => `${item?.title}${index !== (territory?.items?.length - 1) ? ", " : ''}`)}`}</CardEl.CardContentTxt>}
-                                {duration && <CardEl.CardContentTxt>{`${e2p(duration && duration[0] > 0 ? (parseInt(duration[0]) < 10 ? duration[0].split("")[1] : duration[0]) + " ساعت و " : '')}${e2p(duration ? (parseInt(duration[1]) > 10 ? duration[1] : duration[1].split("")[1]) + " دقیقه" : "")}`}</CardEl.CardContentTxt>}
+                                {genre && (
+                                    <CardEl.CardContentTxt>
+                                        {genre.items.map((item, index) => `${item.title}${index !== genre.items.length - 1 ? ", " : ""}`)}
+                                    </CardEl.CardContentTxt>
+                                )}
+                                {territory && (
+                                    <CardEl.CardContentTxt>
+                                        {`${data?.year} / ${territory.items.map((item, index) => `${item.title}${index !== territory.items.length - 1 ? ", " : ""}`)}`}
+                                    </CardEl.CardContentTxt>
+                                )}
+                                {duration && (
+                                    <CardEl.CardContentTxt>
+                                        {`${e2p(parseInt(duration[0]) > 0 ? (parseInt(duration[0]) < 10 ? duration[0][1] : duration[0]) + " ساعت و " : '')}${e2p(duration ? ((parseInt(duration[1]) > 10 ? duration[1] : duration[1][1]) + " دقیقه") : "")}`}
+                                    </CardEl.CardContentTxt>
+                                )}
                                 <CardEl.CardContentImdbDiv>
                                     <span>
                                         <svg viewBox="0 0 44 18" width="32" height="13" fill={"var(--white-color)"}>

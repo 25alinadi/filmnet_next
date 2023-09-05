@@ -4,6 +4,20 @@ import styled from "styled-components";
 import {devices} from "@/utils/constans";
 import placeholder from "@/public/images/placeholder.svg"
 
+const commonCardStyles = `
+  font-size: 0.75rem;
+  font-weight: 400;
+  color: var(--white-color);
+
+  @media only screen and ${devices.md} {
+    font-size: 0.8rem;
+  }
+
+  @media only screen and ${devices.lg} {
+    font-size: 0.875rem;
+  }
+`;
+
 export const CardUl = styled.ul`
   padding: 0;
   margin: 0;
@@ -60,22 +74,12 @@ export const CardLink = styled.a`
 export const CardTitle = styled.div`
   line-height: 1;
   max-width: 100%;
-  font-size: 0.75rem;
-  font-weight: 400;
-  color: var(--white-color);
   margin: 0;
   padding-top: 0.5rem;
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow: hidden;
-
-  @media only screen and ${devices.md} {
-    font-size: 0.8rem;
-  }
-
-  @media only screen and ${devices.lg} {
-    font-size: 0.875rem;
-  }
+  ${commonCardStyles}
 `
 
 export const CardImg = styled.img`
@@ -116,9 +120,6 @@ export const CardContentList = styled.div`
 `
 
 export const CardContentTxt = styled.p`
-  font-size: 0.75rem;
-  font-weight: 400;
-  color: var(--white-color);
   margin: 0;
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
@@ -126,14 +127,7 @@ export const CardContentTxt = styled.p`
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow: hidden;
-
-  @media only screen and ${devices.md} {
-    font-size: 0.8rem;
-  }
-
-  @media only screen and ${devices.lg} {
-    font-size: 0.875rem;
-  }
+  ${commonCardStyles}
 `
 
 export const CardContentImdbDiv = styled.div`
@@ -142,23 +136,12 @@ export const CardContentImdbDiv = styled.div`
   justify-content: start;
   align-items: center;
   border-radius: 0.25rem;
-  font-size: 0.75rem;
-  border: none;
-  white-space: nowrap;
-  line-height: 1.6;
   font-weight: 900;
   padding: 0.25em 0 0;
   margin-top: 1rem;
-  
-  span:nth-child(1) svg{
+  ${commonCardStyles}
+
+  span:nth-child(1) svg {
     margin-left: 0.5rem;
-  }
-
-  @media only screen and ${devices.md} {
-    font-size: 0.8rem;
-  }
-
-  @media only screen and ${devices.lg} {
-    font-size: 0.875rem;
   }
 `
