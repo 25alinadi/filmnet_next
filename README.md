@@ -1,34 +1,33 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-## Getting Started
+## SnappFood Task
 
-First, run the development server:
+برای نصب پکیج های مربوطه ابتدا دستور زیر را اجرا کنید
+```bash
+npm install
+# or
+yarn add
+```
 
+برای اجرای برنامه میتوانید از دستورات زیر استفاده نمایید
 ```bash
 npm run dev
 # or
 yarn dev
-# or
-pnpm dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+نتیجه را در مسیر http://localhost:3000 در مرورگر خود تماشا کنید
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## نکته 
+بعلت زدن ریکوئست ها از local من چند باری خطای cors گرفتم که برای حل این مشکل cors مرورگر را غیرفعال کنید
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## توضیحات
+برای نمایش اطلاعات و صفحه مربوطه سعی شد مواردی که در فایل ارسالی گفته شده فقط اجرا بشه و کار بیشتری انجام نشه و متناسب با فایل ارسالی و تصاویر قرار داده شده در آن پروژه در سطح نمایشگر لپ تاپ و گوشی های همراه طراحی شده
 
-## Learn More
+برای ایجاد پروژه بعلت امتیاز از nextjs13 استفاده شده  و برای مدیریت محتوا از redux-toolkit
+همچنین در این پروژه از typescript نیز استفاده شد.
+وگرنه پروژه رو میشد با vite ایجاد کرد و پروژه react بعلاوه typescript بالا آورد و با استفاده از react-router-dom مسیر دهی مربوطه رو انجام داد.
 
-To learn more about Next.js, take a look at the following resources:
+برای استایل دهی هم از styled-component  استفاده شد و کامپوننت Card با styled-component زده شده
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+برای مدیریت دیتا هم از redux-toolkit استفاده کردم که بعد از کانفیگ کردن با استفاده از createAsyncThunk ریکوئست ها را به سرور زده و با استفاده از extraReducer در وضعیت های مختلف دیتا را مدیریت و برای کاربر نمایش دادم
+همچنین هربار که اسکرول به انتهای صفحه میرسه ریکویست جدید برای مقادیر زده میشه
